@@ -1,24 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Settings from './pages/Settings';
-import SavedPalettes from './pages/SavedPalettes';
-import BottomNav from './components/BottomNavBar';
+import { BrowserRouter } from "react-router-dom";
+import { AppRoutes } from "../router/Routes";
+import BottomNavBar from "./components/BottomNavBar"; // Si quieres incluir la nav siempre
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <div style={{ paddingBottom: '70px' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/palettes" element={<SavedPalettes />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
+    <BrowserRouter>
+      <div style={{ paddingBottom: "60px" }}>
+        <AppRoutes />
       </div>
-      <BottomNav />
-    </Router>
+      <BottomNavBar />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
